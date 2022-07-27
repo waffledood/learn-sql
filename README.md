@@ -44,3 +44,11 @@ FROM inventory_records
 WHERE item_quantity >= 10;
 ```
 
+## Comparison Operators 
+The comparison operators used in SQL are: 
+- `>`   greater than
+- `<`   less than
+- `>=`  greater than or equal to
+- `<=`  less than or equal to
+- `=`   equal to
+- `!=`  not equal to
