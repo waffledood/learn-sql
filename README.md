@@ -57,7 +57,9 @@ The comparison operators used in SQL are:
 
 ### LIKE, ILIKE
 The LIKE logical operator is used to match on similar values, not exact values (think of it like regular expression).
+
 The ILIKE logical opereator is similar to LIKE, except it ignores case.
+
 Note:
 - when using either `LIKE` or `ILIKE`, the column name must be quoted in double quotation marks `"`
 
@@ -87,6 +89,7 @@ WHERE item_name IN ('butter', 'candy', 'bread');
 
 ### BETWEEN
 The BETWEEN logical operator is used to match from a range of values.
+
 Note:
 - BETWEEN operator is always coupled with the AND operator 
 - the bounds for BETWEEN is inclusive (meaning `BETWEEN 10 AND 20` is equals to `>= 10 AND <= 20`) 
@@ -137,6 +140,7 @@ WHERE item_quantity >= 10 OR item_name IS NOT NULL;
 
 ### NOT 
 The NOT operator is used to negate existing conditional statement(s).
+
 Note:
 - It is redundant to use `NOT` on comparison operators as these can be flipped (e.g. NOT >= is equals to <).
 
@@ -149,6 +153,7 @@ WHERE item_name IS NOT NULL;
 
 ### ORDER BY 
 The ORDER BY operator is used to arrange rows in the results returned, in ascending or descending order, and by the values of **a** column, or multi-level column sorting.
+
 Note:
 - Multi-level column sorting can be done by separating the columns with a comma (`,`).
 
