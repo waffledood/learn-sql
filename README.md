@@ -147,3 +147,15 @@ FROM inventory_records
 WHERE item_name IS NOT NULL;
 ```
 
+### ORDER BY 
+The ORDER BY operator is used to arrange rows in the results returned, in ascending or descending order, and by the values of **a** column, or multi-level column sorting.
+Note:
+- Multi-level column sorting can be done by separating the columns with a comma (`,`).
+
+```sql
+SELECT
+*
+FROM inventory_records
+ORDER BY aisle, item_name;
+```
+
