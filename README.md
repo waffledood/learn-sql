@@ -55,4 +55,22 @@ The comparison operators used in SQL are:
 
 ## Logical Operators 
 
+### LIKE, ILIKE
+The LIKE logical operator is used to match on similar values, not exact values (think of it like regular expression).
+The ILIKE logical opereator is similar to LIKE, except it ignores case.
+
+```sql
+SELECT
+*
+FROM inventory_records
+WHERE "item_name" LIKE '%chocolate%';
+```
+
+```sql
+SELECT
+*
+FROM inventory_records
+WHERE "item_name" ILIKE '%Coca Cola%';
+```
+
 
