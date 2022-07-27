@@ -73,4 +73,14 @@ FROM inventory_records
 WHERE "item_name" ILIKE '%Coca Cola%';
 ```
 
+### IN
+The IN logical operator is used to match from a pool of values.
+
+```sql
+SELECT
+*
+FROM inventory_records
+WHERE item_name IN ('butter', 'candy', 'bread');
+```
+
 
