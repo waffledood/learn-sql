@@ -18,4 +18,15 @@ SELECT item_name, item_type FROM inventory_records;
 
 The above SQL statement selects 2 columns (`item_name`, `item_type`) from the `invetory_records` table.
 
+## LIMIT 
+The `LIMIT` command allows users to limit the number of rows (integer value) queried in the results. This might be particularly useful in cases where the size of the table is huge.
+
+```sql
+SELECT
+*
+FROM inventory_records
+LIMIT 100;
+```
+
+The above SQL statement returns a query with 100 rows of data.
 
