@@ -52,3 +52,7 @@ The comparison operators used in SQL are:
 - `<=`  less than or equal to
 - `=`   equal to
 - `!=`  not equal to
+
+## Logical Operators 
+
+
