@@ -135,3 +135,15 @@ FROM inventory_records
 WHERE item_quantity >= 10 OR item_name IS NOT NULL;
 ```
 
+### NOT 
+The NOT operator is used to negate existing conditional statement(s).
+Note:
+- It is redundant to use `NOT` on comparison operators as these can be flipped (e.g. NOT >= is equals to <).
+
+```sql
+SELECT
+*
+FROM inventory_records
+WHERE item_name IS NOT NULL;
+```
+
