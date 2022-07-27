@@ -83,4 +83,16 @@ FROM inventory_records
 WHERE item_name IN ('butter', 'candy', 'bread');
 ```
 
+### BETWEEN
+THe BETWEEN logical operator is used to match from a range of values.
+Note:
+- BETWEEN operator is always coupled with the AND operator 
+- the bounds for BETWEEN is inclusive (meaning `BETWEEN 10 AND 20` is equals to `>= 10 AND <= 20`) 
+
+```sql
+SELECT
+*
+FROM inventory_records
+WHERE item_quantity BETWEEN 10 AND 20;
+```
 
