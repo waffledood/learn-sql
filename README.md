@@ -34,3 +34,13 @@ LIMIT 100;
 
 The above SQL statement returns a query with 100 rows of data.
 
+## WHERE 
+The `WHERE` command allows users to specify conditional statements for the queries.
+
+```sql
+SELECT
+*
+FROM inventory_records
+WHERE item_quantity >= 10;
+```
+
