@@ -116,12 +116,22 @@ WHERE item_name IS NOT NULL;
 ```
 
 ### AND
-The AND operator is used to filter for rows that meet both conditional statements.
+The AND operator is used to filter for rows that meet **both** conditional statements.
 
 ```sql
 SELECT
 *
 FROM inventory_records
 WHERE item_quantity >= 10 AND item_name IS NOT NULL;
+```
+
+### OR 
+The OR operator is used to filter for rows that meet **either** of the 2 conditional statements.
+
+```sql
+SELECT
+*
+FROM inventory_records
+WHERE item_quantity >= 10 OR item_name IS NOT NULL;
 ```
 
