@@ -8,6 +8,9 @@
 
 ### Outer Joins
 
+_Question_
+Write a query that displays player names, school names and conferences for schools in the "FBS (Division I-A Teams)" division.
+
 _My Attempt_
 ```sql
 SELECT player_name,
