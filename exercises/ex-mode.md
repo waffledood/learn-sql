@@ -121,4 +121,38 @@ SELECT companies.state_code,
  ORDER BY 3 DESC
 ```
 
+### Filtering in the ON or WHERE clause
+
+_Question_
+Write a query that shows a company's name, "status" (found in the Companies table), and the number of unique investors in that company. Order by the number of investors from most to fewest. Limit to only companies in the state of New York.
+
+_My Attempt_
+```sql
+SELECT companies.name,
+       companies.status,
+       COUNT(DISTINCT investments.investor_permalink) AS "No. Of Unique Investors"
+FROM tutorial.crunchbase_companies companies
+JOIN tutorial.crunchbase_investments investments 
+ON companies.permalink = investments.company_permalink
+WHERE companies.state_code = 'NY'
+GROUP BY companies.name, companies.status
+ORDER BY "No. Of Unique Investors";
+```
+
+_Sample Answer_
+```sql
+SELECT companies.name AS company_name,
+       companies.status,
+       COUNT(DISTINCT investments.investor_name) AS unqiue_investors
+  FROM tutorial.crunchbase_companies companies
+  LEFT JOIN tutorial.crunchbase_investments investments
+    ON companies.permalink = investments.company_permalink
+ WHERE companies.state_code = 'NY'
+ GROUP BY 1,2
+ ORDER BY 3 DESC
+```
+
+_Feedback_
+
+
 ## Advanced
