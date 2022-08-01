@@ -91,4 +91,34 @@ SELECT companies.state_code,
 _Feedback_
 Totally misunderstood the question & hence came up with the wrong solutions. After looking at the sample answer, I understand the question is asking for the number of companies in each state & the number of companies in each state that got acquired, hence the 3 columns.
 
+### Right Join
+
+_Question_
+Rewrite the previous practice query in which you counted total and acquired companies by state, but with a RIGHT JOIN instead of a LEFT JOIN. The goal is to produce the exact same results.
+
+_My Attempt_
+```sql
+SELECT companies.state_code,
+       COUNT(DISTINCT companies.permalink) AS "Number of Companies",
+       COUNT(DISTINCT acquisitions.acquirer_permalink) AS "Number of Companies (Acquired)"
+FROM tutorial.crunchbase_acquisitions acquisitions
+RIGHT JOIN tutorial.crunchbase_companies companies
+ON companies.permalink = acquisitions.company_permalink
+WHERE companies.state_code IS NOT NULL
+GROUP BY companies.state_code;
+```
+
+_Sample Answer_
+```sql
+SELECT companies.state_code,
+       COUNT(DISTINCT companies.permalink) AS unique_companies,
+       COUNT(DISTINCT acquisitions.company_permalink) AS acquired_companies
+  FROM tutorial.crunchbase_acquisitions acquisitions
+ RIGHT JOIN tutorial.crunchbase_companies companies
+    ON companies.permalink = acquisitions.company_permalink
+ WHERE companies.state_code IS NOT NULL
+ GROUP BY 1
+ ORDER BY 3 DESC
+```
+
 ## Advanced
