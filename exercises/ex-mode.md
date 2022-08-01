@@ -181,6 +181,8 @@ SELECT CASE WHEN investments.investor_name IS NULL THEN 'No Investors'
 ```
 
 _Feedback_
-General idea of my attempt is there but not including the `CASE` statement for `investor_name` will probably be awkward presentation-wise, as the column values for companies with no investors, will just be an empty space. The inclusion of the `CASE` statement helps to explicitly indicate that there isn't any investors for a particular company.
+General idea of my attempt is there but not including the `CASE` statement for `investor_name` will probably be awkward presentation-wise, as the column values for companies with no investors, will just be an empty space with a very high number of investors (as pictured below). The inclusion of the `CASE` statement helps to explicitly indicate that there isn't any investors for a particular company.
+
+![missing-case-statement](images/exercises/missing-case-statement.png)
 
 ## Advanced
