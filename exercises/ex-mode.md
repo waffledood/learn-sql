@@ -155,5 +155,32 @@ SELECT companies.name AS company_name,
 _Feedback_
 Using _just_ `JOIN` leaves out companies that don't have any investors. A `LEFT JOIN` would have been more appropriate & in line with what the question asked. 
 
+_Question_
+
+_My Attempt_
+```sql
+SELECT investments.investor_name,
+       COUNT(DISTINCT companies.permalink) AS "No. of Companies Invested"
+FROM tutorial.crunchbase_companies companies
+LEFT JOIN tutorial.crunchbase_investments investments 
+ON companies.permalink = investments.company_permalink
+GROUP BY investments.investor_name
+ORDER BY "No. of Companies Invested";
+```
+
+_Sample Answer_
+```sql
+SELECT CASE WHEN investments.investor_name IS NULL THEN 'No Investors'
+            ELSE investments.investor_name END AS investor,
+       COUNT(DISTINCT companies.permalink) AS companies_invested_in
+  FROM tutorial.crunchbase_companies companies
+  LEFT JOIN tutorial.crunchbase_investments investments
+    ON companies.permalink = investments.company_permalink
+ GROUP BY 1
+ ORDER BY 2 DESC
+```
+
+_Feedback_
+General idea of my attempt is there but not including the `CASE` statement for `investor_name` will probably be awkward presentation-wise, as the column values for companies with no investors, will just be an empty space. The inclusion of the `CASE` statement helps to explicitly indicate that there isn't any investors for a particular company.
 
 ## Advanced
