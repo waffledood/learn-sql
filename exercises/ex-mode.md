@@ -153,6 +153,7 @@ SELECT companies.name AS company_name,
 ```
 
 _Feedback_
+Using _just_ `JOIN` leaves out companies that don't have any investors. A `LEFT JOIN` would have been more appropriate & in line with what the question asked. 
 
 
 ## Advanced
